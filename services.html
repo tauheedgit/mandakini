@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Mandakini Digital Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your Theme CSS (keep) -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
+  <!-- Clean Page CSS (minimal + responsive + animations) -->
+  <style>
+    :root{
+      --brand:#03a4ed;
+      --brand2:#ff695f;
+      --ink:#0b1220;
+      --card: rgba(255,255,255,.92);
+      --glass: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.18);
+    }
+    body{ font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+
+    /* HERO */
+    .hero-banner{
+      min-height: 58vh;
+      position: relative;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      isolation:isolate;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background-size:cover;
+      background-position:center;
+      transform: scale(1.03);
+      filter: saturate(1.05);
+      z-index:-2;
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(1000px 500px at 20% 30%, rgba(3,164,237,.55), transparent 60%),
+        radial-gradient(900px 420px at 75% 25%, rgba(255,105,95,.35), transparent 60%),
+        linear-gradient(90deg, rgba(8,12,22,.80), rgba(8,12,22,.45), rgba(8,12,22,.15));
+      z-index:-1;
+    }
+    .hero-inner{ padding: 120px 0 90px; }
+    .breadcrumb-custom .breadcrumb{
+      background:transparent; padding:0; margin:0 0 18px;
+    }
+    .breadcrumb-custom a{ color:rgba(255,255,255,.85); text-decoration:none; }
+    .breadcrumb-custom a:hover{ color:#fff; text-decoration:underline; }
+    .hero-title{
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      margin:0;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .hero-sub{
+      max-width: 720px;
+      color: rgba(255,255,255,.88);
+      margin-top: 12px;
+      font-size: 1.05rem;
+    }
+    .hero-wave{
+      position:absolute; left:0; bottom:-1px;
+      width:100%; height:110px;
+    }
+
+    /* SECTION */
+    .section-pad{ padding: 70px 0; }
+    .section-head{
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      font-weight:700;
+      font-size:.92rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--brand);
+      background: rgba(3,164,237,.10);
+      border: 1px solid rgba(3,164,237,.22);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    .section-title{
+      margin: 12px 0 10px;
+      font-weight: 900;
+      color:#1f1f1f;
+      font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+    }
+    .section-desc{
+      margin:0;
+      color:#5b5b5b;
+      font-size:1.02rem;
+    }
+
+    /* CARDS */
+    .soft-bg{
+      background:
+        radial-gradient(900px 480px at 15% 15%, rgba(3,164,237,.10), transparent 60%),
+        radial-gradient(900px 480px at 85% 10%, rgba(255,105,95,.08), transparent 60%),
+        linear-gradient(#fff, #fff);
+    }
+    .glass-wrap{
+      background:
+        radial-gradient(1000px 520px at 20% 30%, rgba(3,164,237,.20), transparent 60%),
+        radial-gradient(900px 520px at 80% 20%, rgba(255,105,95,.16), transparent 60%),
+        linear-gradient(180deg, #0c1222 0%, #0b1220 100%);
+      color:#fff;
+    }
+    .service-card{
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 18px 40px rgba(11,18,32,.08);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      height:100%;
+    }
+    .service-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 26px 70px rgba(3,164,237,.18);
+      border-color: rgba(3,164,237,.35);
+    }
+    .icon-pill{
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(3,164,237,.18), rgba(255,105,95,.18));
+      border: 1px solid rgba(3,164,237,.22);
+      color: #0b1220;
+      font-size: 1.25rem;
+      flex: 0 0 auto;
+    }
+    .card-title{ font-weight: 800; }
+    .muted{ color:#5f5f5f; }
+
+    /* DARK FEATURE CARDS */
+    .feature-card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 18px;
+      height:100%;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .feature-card:hover{
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.22);
+    }
+    .feature-card h6{ font-weight:800; margin:10px 0 6px; }
+    .feature-card p{ margin:0; color: rgba(255,255,255,.78); }
+
+    /* CTA */
+    .cta{
+      background: linear-gradient(135deg, rgba(3,164,237,1), rgba(255,105,95,1));
+      color:#fff;
+      border-radius: 22px;
+      padding: 34px 28px;
+      box-shadow: 0 28px 80px rgba(3,164,237,.22);
+      overflow:hidden;
+      position:relative;
+    }
+    .cta:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 220px at 20% 40%, rgba(255,255,255,.22), transparent 60%),
+        radial-gradient(700px 220px at 80% 30%, rgba(255,255,255,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .cta .btn{
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+    }
+
+    /* SIMPLE SCROLL ANIMATIONS (no extra libs) */
+    .reveal{
+      opacity:0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform: translateY(0);
+    }
+    .delay-1{ transition-delay:.08s; }
+    .delay-2{ transition-delay:.16s; }
+    .delay-3{ transition-delay:.24s; }
+
+    /* SMALL FIXES */
+    .list-check li{ margin-bottom: 8px; }
+    .list-check li::marker{ color: var(--brand); }
+    .btn-outline-light{
+      border-width:2px;
+    }
+
+    @media (max-width: 768px){
+      .hero-inner{ padding: 105px 0 80px; }
+      .section-pad{ padding: 58px 0; }
+    }
+
+    /* Preloader: keep your existing markup; quick hide if needed */
+    .js-preloader{ position: fixed; inset:0; z-index: 9999; background:#fff; }
+  </style>
+
+  <script>
+    window.addEventListener("load", () => {
+      const pre = document.getElementById("js-preloader");
+      if (pre) pre.style.display = "none";
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header (same as your theme) -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.jpeg" alt="Logo" style="width:70px;height:70px;border-radius:25px;">
+            </a>
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="./index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="./teams.html">Teams</a></li>
+
+              <li class="scroll-to-section"><a href="./services.html">Services</a></li>
+              <li class="scroll-to-section"><a href="./about.html">About</a></li>
+             
+              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="./contact.html">Contact Us Now</a></div></li> 
+            </ul>    
+            <a class='menu-trigger'><span>Menu</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-banner overflow-hidden">
+    <div class="hero-bg" style="background-image:url('./assets/images/servicestop.webp');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner position-relative">
+      <div class="row">
+        <div class="col-lg-10">
+          <nav aria-label="breadcrumb" class="breadcrumb-custom">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">Our Services</li>
+            </ol>
+          </nav>
+
+          <h1 class="hero-title reveal">Our Services</h1>
+          <p class="hero-sub reveal delay-1">
+            We build websites, marketing systems, and growth strategies that are simple, measurable, and built for long-term results.
+          </p>
+
+          <div class="d-flex gap-2 flex-wrap mt-3 reveal delay-2">
+            <a href="./services.html" class="btn btn-light rounded-pill fw-bold px-4 py-2">Explore Services</a>
+            <a href="./contact.html" class="btn btn-outline-light rounded-pill fw-bold px-4 py-2">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none">
+      <path fill="#ffffff" d="M0,84 C240,120 480,125 720,96 C960,66 1200,54 1440,62 L1440,140 L0,140 Z"></path>
+    </svg>
+  </section>
+
+  <!-- Section: What we do -->
+  <section class="section-pad soft-bg">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal">Who we are</span>
+        <h2 class="section-title reveal delay-1">A Growth Partner, Not Just an Agency</h2>
+        <p class="section-desc reveal delay-2">
+          We don’t follow a one-size-fits-all approach. We understand your business first, then build a plan that fits your goals.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 reveal">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-pill"><i class="fa fa-bullseye"></i></div>
+              <div>
+                <h5 class="card-title mb-1">Strategy First</h5>
+                <p class="muted mb-0">Clear roadmap for marketing, website, and lead generation—based on your audience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 reveal delay-1">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-pill"><i class="fa fa-code"></i></div>
+              <div>
+                <h5 class="card-title mb-1">Web + Performance</h5>
+                <p class="muted mb-0">Fast, responsive websites that look premium and convert visitors into customers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4 reveal delay-2">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-pill"><i class="fa fa-line-chart"></i></div>
+              <div>
+                <h5 class="card-title mb-1">Measurable Growth</h5>
+                <p class="muted mb-0">Funnels, ads, tracking, and optimization—so you can see results and improve.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mini stats -->
+      <div class="row g-4 mt-4">
+        <div class="col-md-4">
+          <div class="service-card p-4 text-center reveal">
+            <h3 class="fw-black mb-1" style="font-weight:900;color:var(--brand)">100%</h3>
+            <p class="muted mb-0">Mobile Responsive</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card p-4 text-center reveal delay-1">
+            <h3 class="fw-black mb-1" style="font-weight:900;color:var(--brand2)">Fast</h3>
+            <p class="muted mb-0">Optimized Pages</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card p-4 text-center reveal delay-2">
+            <h3 class="fw-black mb-1" style="font-weight:900;color:var(--brand)">Support</h3>
+            <p class="muted mb-0">Reliable Assistance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Services Highlights (replacing Elementor blocks properly) -->
+  <section class="section-pad glass-wrap">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal" style="color:#fff;background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.16);">Core Services</span>
+        <h2 class="section-title reveal delay-1" style="color:#fff;">What We Deliver</h2>
+        <p class="section-desc reveal delay-2" style="color:rgba(255,255,255,.78);">
+          Everything you need in one place—marketing, social media, funnels, and support services.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card reveal">
+            <div class="icon-pill" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.18);">
+              <i class="fa fa-bullhorn"></i>
+            </div>
+            <h6>Marketing Strategy</h6>
+            <p>Audience-based planning, brand awareness, campaigns, and CRM email flow.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card reveal delay-1">
+            <div class="icon-pill" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.18);">
+              <i class="fa fa-instagram"></i>
+            </div>
+            <h6>Social Media</h6>
+            <p>Content design, scheduling, moderation, ads setup, and monthly planning calls.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card reveal delay-2">
+            <div class="icon-pill" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.18);">
+              <i class="fa fa-filter"></i>
+            </div>
+            <h6>Sales Funnels</h6>
+            <p>Landing pages, lead magnet, automation emails, tracking pixels, and analytics.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card reveal delay-3">
+            <div class="icon-pill" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.18);">
+              <i class="fa fa-briefcase"></i>
+            </div>
+            <h6>Virtual Assistant</h6>
+            <p>Docs, presentations, scheduling, follow-ups, recruitment support, and admin tasks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center reveal delay-2">
+        <a href="./services.html" class="btn btn-light rounded-pill fw-bold px-4 py-2">Discover More</a>
+        <a href="./contact.html" class="btn btn-outline-light rounded-pill fw-bold px-4 py-2 ms-2">Team With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: What we will provide (clean list + accordion) -->
+  <section class="section-pad soft-bg">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <span class="eyebrow reveal">Our Promise</span>
+          <h2 class="section-title reveal delay-1">Personalised Work, Real Results</h2>
+          <p class="section-desc reveal delay-2">
+            We become part of your team—teaching you what we do while building systems that help you grow.
+          </p>
+
+          <div class="service-card p-4 mt-3 reveal">
+            <h5 class="fw-bold mb-3">We will provide:</h5>
+            <ul class="list-check mb-0">
+              <li>Branding & messaging support</li>
+              <li>Website design & development</li>
+              <li>Domain email setup (your brand email)</li>
+              <li>Marketing funnel & landing pages</li>
+              <li>Ads account setup (Meta/Google)</li>
+              <li>Tracking + Analytics optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="service-card p-4 reveal delay-1">
+            <h5 class="fw-bold mb-3">Frequently Asked</h5>
+
+            <div class="accordion" id="faq">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                    Do you provide complete website + marketing?
+                  </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    Yes—website, funnel, content support, ads setup, and optimization as per your goal.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                    Can you work with my current website?
+                  </button>
+                </h2>
+                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    Yes—we can redesign, speed optimize, and improve conversions without changing everything.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                    Do you provide monthly support?
+                  </button>
+                </h2>
+                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    Yes—ongoing plans are available based on tasks and deliverables.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                    How do we start?
+                  </button>
+                </h2>
+                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    Share your goal, current status, and budget—we suggest the best plan and timeline.
+                  </div>
+                </div>
+              </div>
+            </div><!-- accordion -->
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="cta reveal">
+            <div class="row align-items-center position-relative" style="z-index:1;">
+              <div class="col-lg-8">
+                <h3 class="fw-black mb-2" style="font-weight:900;">Ready to grow your business?</h3>
+                <p class="mb-0" style="opacity:.9;">Let’s build your website, marketing plan, and lead system together.</p>
+              </div>
+              <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a class="btn btn-light" href="https://wa.me/919454882950" target="_blank">
+                  WhatsApp Now
+                </a>
+                <a class="btn btn-outline-light ms-2" href="./contact.html">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer (your existing footer kept) -->
+  <div class="footer-dec">
+    <img src="assets/images/footer-dec.png" alt="">
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="about footer-item">
+            <div class="logo">
+              <img src="./assets/images/logo.jpeg" alt="Logo" style="width:70px;height:70px;border-radius:25px;">
+            </div>
+            <a href="#">info@company.com</a>
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="https://www.instagram.com/onixdigitalsolution?igsh=aGFqazc3OGVycGlm&utm_source=qr" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="services footer-item">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">SEO Development</a></li>
+              <li><a href="#">Business Growth</a></li>
+              <li><a href="#">Social Media Management</a></li>
+              <li><a href="#">Website Optimization</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="community footer-item">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Business Ideas</a></li>
+              <li><a href="#">Website Checkup</a></li>
+              <li><a href="#">Page Speed Test</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="subscribe-newsletters footer-item">
+            <h4>Subscribe Newsletters</h4>
+            <p>Get our latest news and ideas to your inbox</p>
+            <form action="#" method="get">
+              <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required>
+              <button type="submit" id="form-submit" class="main-button">
+                <i class="fa fa-paper-plane-o"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright © 2026 Mandakini Digital Solutions. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your scripts (keep if used by theme) -->
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <!-- Scroll reveal animation -->
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("in-view");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
