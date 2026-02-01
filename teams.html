@@ -197,19 +197,21 @@
       border-color: #03a4ed;
     }
 
-    .team-card .card-img-top {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #03a4ed;
-      transition: all 0.3s ease;
-      margin: 20px auto 0;
-    }
+.team-card .card-img-top {
+  width: 260px;          /* size bada */
+  height: 260px;
+  object-fit: contain;
+  border-radius: 25px;
+  border-radius: 12px;
+  border: 3px solid #03a4ed;
+  transition: all 0.3s ease;
+  margin: 20px auto 10px;
+}
+
 
     .team-card:hover .card-img-top {
-      transform: scale(1.1);
-      border-color: #ff695f;
+      transform: scale(1.05);
+  border-color: #ff695f;
     }
 
     .team-card .card-body {
@@ -252,88 +254,82 @@
   </style>
 
   <script>
-    // Team data - easy to edit
-    const teamMembers = [
-       {
-        image: './assets/images/rajeshkumar.jpeg',
-        name: 'Rajesh Kumar',
-        role: 'Founder',
-        description: 'Visionary leader driving strategic growth.'
-      },
-      {
-        image: 'assets/images/anuragkapoor.jpeg',
-        name: 'Anurag Kapoor',
-        role: 'Training & Development Head',
-        description: 'Visionary leader driving strategic growth.'
-      },
-      {
-        image: 'assets/images/satyamrauniyar.jpeg',
-        name: 'Satyam Rauniyar',
-        role: 'Co-Founder',
-        description: 'Visionary leader driving strategic growth.'
-      },
+ // Team data - easy to edit
+const teamMembers = [
+  {
+    image: 'assets/images/rajeshkumar.jpeg',
+    name: 'Rajesh Kumar',
+    role: 'Founder',
+    description: 'Founder and visionary leader responsible for long-term strategy, innovation, and overall business direction.'
+  },
+  {
+    image: 'assets/images/anuragkapoor.jpeg',
+    name: 'Anurag Kapoor',
+    role: 'Training & Development Head',
+    description: 'Leads employee training programs, skill development initiatives, and performance enhancement strategies.'
+  },
+  {
+    image: 'assets/images/satyamrauniyar.jpeg',
+    name: 'Satyam Rauniyar',
+    role: 'Co-Founder',
+    description: 'Co-founder focused on business growth, partnerships, and operational excellence.'
+  },
+  {
+    image: 'assets/images/ruchi.jpeg',
+    name: 'Ruchi Bashera',
+    role: 'Financial Advisor Head',
+    description: 'Oversees financial planning, investment strategies, and risk management for sustainable growth.'
+  },
+  {
+    image: 'assets/images/tauheed.jpg',
+    name: 'Mr Tauheed Khan',
+    role: 'Web & Mobile App Development <br/><br/> Meta Ads',
+    description: 'Leads web and mobile app development while managing high-performance Meta Ads and digital campaigns.'
+  },
+  {
+    image: 'assets/images/RajatKumar.jpeg',
+    name: 'Rajat Kumar',
+    role: 'CEO',
+    description: 'Chief Executive Officer driving company vision, leadership, and overall business operations.'
+  },
+  {
+    image: 'assets/images/shivanshsh.jpeg',
+    name: 'Shivank Shukla',
+    role: 'Marketing Executive',
+    description: 'Executes marketing campaigns, manages brand promotions, and supports lead generation activities.'
+  },
+  {
+    image: 'assets/images/Divya.jpeg',
+    name: 'Divya Saini',
+    role: 'Marketing Manager',
+    description: 'Plans and manages marketing strategies, campaigns, and team coordination for business growth.'
+  },
+  {
+    image: 'assets/images/mayankmani.jpeg',
+    name: 'Mayank Mani',
+    role: 'HR Manager',
+    description: 'Handles recruitment, employee relations, and organizational culture development.'
+  },
+  {
+    image: 'assets/images/OmkarRauniyar.jpeg',
+    name: 'Omkar Rauniyar',
+    role: 'Marketing Executive',
+    description: 'Supports digital and offline marketing initiatives with a focus on customer engagement.'
+  },
+  {
+    image: 'assets/images/princekumar.jpeg',
+    name: 'Prince Kumar',
+    role: 'Financial Advisor',
+    description: 'Provides financial guidance, budgeting support, and data-driven financial insights.'
+  },
+  {
+    image: 'assets/images/Rashmithakur CEO.jpeg',
+    name: 'Rashmi Thakur',
+    role: 'CEO',
+    description: 'Ensures smooth operations, strategic execution, and organizational efficiency.'
+  }
+];
 
-        {
-         image: './assets/images/ruchi.jpeg',
-         name: 'Ruchi Bashera',
-        role: 'Finiancial Advisor Head',
-         description: 'Visionary leader driving strategic growth.'
-       },
-       {
-        image: 'assets/images/tauheed.jpg',
-        name: 'Mr Tauheed Khan',
-        role: 'Web & Mobile App Development <br/><br/> Meta Adds',
-        description: 'Visionary leader driving strategic growth.'
-      },
-      {
-        image: 'assets/images/RajatKumar.jpeg',
-        name: 'Rajat Kumar',
-        role: 'CEO',
-        description: 'Visionary leader driving strategic growth.'
-      },
-      // {
-      //   image: 'assets/images/anuragkapoor.jpeg',
-      //   name: 'Anurag Kapoor',
-      //   role: 'CEO',
-      //   description: 'Visionary leader driving strategic growth.'
-      // },
-       {
-        image: 'assets/images/shivanshsh.jpeg',
-        name: 'Shivank Shukla',
-        role: 'Marketing Executive',
-        description: 'Marketing Executive driving strategic growth.'
-      },
-      {
-        image: 'assets/images/Divya.jpeg',
-        name: 'Divya Saini',
-        role: 'Marketing Manager',
-        description: 'Expert in digital marketing strategies.'
-      },
-      {
-        image: 'assets/images/mayankmani.jpeg',
-        name: 'Mayank Mani',
-        role: 'HR Manager',
-        description: 'Full-stack developer with passion for code.'
-      },
-      {
-        image: 'assets/images/OmkarRauniyar.jpeg',
-        name: 'Omkar Rauniyar',
-        role: 'Marketing Executive',
-        description: 'Creative designer crafting stunning visuals.'
-      },
-      {
-        image: 'assets/images/princekumar.jpeg',
-        name: 'Prince Kumar',
-        role: 'Finiancial Advisor',
-        description: 'Data-driven insights for better decisions.'
-      },
-      {
-        image: 'assets/images/Rashmithakur CEO.jpeg',
-        name: 'Rashmi Thakur',
-        role: 'CEO',
-        description: 'Ensuring smooth operations and efficiency.'
-      }
-    ];
 
     // Populate team cards
     document.addEventListener('DOMContentLoaded', function() {
